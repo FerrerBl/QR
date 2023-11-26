@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QR.MenuPrincipal"
+             NavigationPage.HasNavigationBar="False">
+    <Grid>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+            
+                <Image Source="https://i.ibb.co/S58bwWy/56763.png"
+                       HeightRequest="40"
+                       Margin="15,20"/>
+                
+                <SearchBar Placeholder="Buscar Evento"
+                       FontSize="Large"
+                       Margin="10,0"
+                       Keyboard="Chat"
+                       HorizontalOptions="FillAndExpand"/>
+                <Image Source="https://i.ibb.co/18m1g58/3031293.png" 
+                       HeightRequest="15"/>
+                <Image Source="https://i.ibb.co/McLyLMc/1144760.png"
+                       HeightRequest="35"
+                       Margin="25,20"/>
+            </StackLayout>
+            <Label Text="User"
+                   HorizontalOptions="End" 
+                   Margin="0,-20,26,0"
+                   FontAttributes="Bold"/>
+            <Label Text="Lista de Eventos"
+                   FontAttributes="Bold"
+                   FontSize="35"
+                   HorizontalOptions="CenterAndExpand" 
+                   Margin="0,30,0,30"/>
+            <StackLayout Orientation="Horizontal">
+                <Image Source="https://i.ibb.co/pKvwPkP/6998768.png" 
+                             HeightRequest="35"
+                             Margin="40,0,0,0"/>
+                <Button x:Name="RegistroEvento"
+                    Text="Registrar Evento"
+                        TextColor="White"
+                        Background="#338bff" 
+                        Margin="0,0"
+                        Clicked="RegistroEvento_Clicked"/>
+              
+                       
+            </StackLayout>
+            <StackLayout>
+                <!-- Botón para agregar nuevo evento -->
+               
+                <ListView x:Name="listaEventos"
+                          IsVisible="true"
+                          ItemSelected="listaEventos_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                   
+                                    <Label Text="{Binding NombreEvento}"
+                                           Grid.Row="0"
+                                           Grid.Column="0"
+                                           TextColor="Black" />
+                                    <Label Text="{Binding FechaEvento}"
+                                           Grid.Row="0"
+                                           Grid.Column="1"
+                                           TextColor="Black" />
+                                    <Label Text="{Binding HoraEvento}"
+                                           Grid.Row="0"
+                                           Grid.Column="2"
+                                           TextColor="Black" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <!-- Etiqueta para mostrar cuando no hay eventos -->
+               
+            </StackLayout>
+        </StackLayout>
+      
+    </Grid>
+</ContentPage>

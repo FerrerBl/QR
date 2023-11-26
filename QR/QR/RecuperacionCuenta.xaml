@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QR.RecuperacionCuenta"
+             NavigationPage.HasNavigationBar="False">
+    <Grid>
+        <StackLayout Margin="60,20"
+                     >
+            <Image Source="https://i.ibb.co/QP80ZZD/lambda-3.png" />
+            <Label Text="¿Olvidaste tu cuenta?"
+                   HorizontalOptions="CenterAndExpand"
+                   FontSize="30"
+                   Margin="0,20"
+                   TextColor="#338bff"
+                   FontAttributes="Bold"/>
+            <StackLayout Orientation="Horizontal">
+            <Entry Keyboard="Chat"
+                   Placeholder="Correo Electrónico"
+                   FontSize="Large"
+                   HorizontalOptions="FillAndExpand"
+                   Margin="0,30"/>
+                <Image Source="https://i.ibb.co/tXp8Yff/646094.png" 
+                       HeightRequest="25"/>
+            </StackLayout>
+            <Button Text="Enviar"
+                    TextTransform="None"
+                    CornerRadius="20"
+                    TextColor="White"
+                    BackgroundColor="#338bff"
+                    Margin="40,30"
+                    FontSize="Large"/>
+            <Label Text="ó"
+                   HorizontalOptions="Center"
+                   Margin="0,30" />
+            <Label Text="Iniciar Sesión"
+                   HorizontalOptions="CenterAndExpand"
+                   FontSize="20"
+                   TextColor="#338bff"
+                   FontAttributes="Bold"
+                   TextDecorations="Underline"
+                   x:Name="lblIniciarSesion">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </Grid>
+</ContentPage>

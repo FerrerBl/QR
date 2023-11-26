@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QR.Registro"
+             NavigationPage.HasNavigationBar="False">
+    
+   <StackLayout>
+       
+        <Image Source="https://i.ibb.co/QP80ZZD/lambda-3.png"
+               HorizontalOptions="Center"
+               VerticalOptions="Start" />
+       
+        <Label Text="Informacion de administrador"
+               FontAttributes="Bold"
+               FontSize="Large"
+               HorizontalOptions="FillAndExpand"
+               TextColor="#338bff"
+               Margin="20"
+               Grid.Column="0" />
+        <Entry Placeholder="Nombre(s):"
+               FontSize="Large"
+               HorizontalOptions="FillAndExpand"
+               Margin="60,0"
+               Keyboard="Chat"/>
+        <Entry Placeholder="Apellido(s):"
+               FontSize="Large"
+               HorizontalOptions="FillAndExpand"
+               Margin="60,20"
+               Keyboard="Chat"/>
+        <Entry Placeholder="Correo Electronico"
+               FontSize="Large"
+               Margin="60,20"
+               Keyboard="Email"/>
+        <Button Text="Enviar"
+                FontAttributes="Bold"
+                TextColor="White"
+                FontSize="Large"
+                CornerRadius="20"
+                BackgroundColor="#338bff" 
+                Margin="100,20"
+                x:Name="btnEnviar"
+                Clicked="TapGestureRecognizer_Tapped"
+                />
+        <Label Text="ó"
+               HorizontalOptions="Center"
+               Margin="0,30" />
+        <Label Text="Iniciar Sesión"
+               HorizontalOptions="CenterAndExpand"
+               FontSize="20"
+               TextColor="#338bff"
+               FontAttributes="Bold"
+               TextDecorations="Underline"
+               x:Name="lblIniciarSesion">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+            </Label.GestureRecognizers>
+        </Label>
+    </StackLayout>
+</ContentPage>

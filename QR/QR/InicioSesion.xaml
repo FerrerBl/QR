@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QR.MainPage"
+             NavigationPage.HasNavigationBar="False"
+             >
+    
+    
+    <Grid>
+        <StackLayout Margin="60,20">
+            <Image Source="https://i.ibb.co/QP80ZZD/lambda-3.png" 
+                   />
+            
+            <Label Text="Inicio de Sesion"
+                   TextTransform="None"
+                   FontSize="16"
+                   FontAttributes="Bold"
+                   TextColor="#338bff" />
+            <StackLayout Orientation="Horizontal">
+              
+                <Entry Keyboard="Chat"
+                   Placeholder="Usuario"
+                   FontSize="Large"
+                   HorizontalOptions="FillAndExpand"
+                   Margin="0,0,0,20" 
+                   />
+                <Image Source="https://i.ibb.co/DrjYyH5/avatar.png" 
+                       HeightRequest="25"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+            <Entry Keyboard="Chat"
+                   Placeholder="Contraseña"
+                   FontSize="Large"
+                   HorizontalOptions="FillAndExpand" />
+                <Image Source="https://i.ibb.co/x6WKLm6/padlock.png" 
+                       HeightRequest="25"/>
+            </StackLayout>
+            <Button Text="Iniciar Sesion"
+                    TextTransform="None"
+                    FontAttributes="Bold"
+                    TextColor="White"
+                    BackgroundColor=" #338bff"
+                    FontSize="Large"
+                    CornerRadius="10"
+                    Margin="40,20" 
+                    x:Name="btnInicioSesion"
+                    Clicked="btnInicioSesion_Clicked"
+                />
+            <Label Text="Olvidaste la contraseña?"
+                   HorizontalOptions="CenterAndExpand"
+                   FontSize="20"
+                   TextColor="#338bff"
+                   FontAttributes="Bold"
+                   TextDecorations="Underline"
+                   x:Name="lblRecuperacion">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Label.GestureRecognizers>
+                </Label>
+                
+            <Label Text="ó"
+                   HorizontalOptions="Center"
+                   Margin="0,80" />
+            <Label Text="No tienes cuenta?"
+                   TextColor="#338bff"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   FontSize="20" />
+            <Button Text="Registrate"
+                    FontSize="Large"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="20"
+                    Margin="60,10"
+                    Background="#338bff"
+                    TextTransform="None" 
+                    x:Name="btnRegistro"
+                    Clicked="btnRegistro_Clicked"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

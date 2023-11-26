@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QR.RegistroEventos">
+    <StackLayout>
+            <Image Source="https://i.ibb.co/McLyLMc/1144760.png"
+                   HeightRequest="35"
+                   HorizontalOptions="End"
+                   Margin="0,10,20,0"
+                       />
+        <Label Text="Usuario"
+           HorizontalOptions="End"
+           Margin="0,-10,15,0"
+           FontAttributes="Bold" />
+        <Label Text="Registro de Eventos"
+               FontAttributes="Bold"
+               FontSize="35"
+               HorizontalOptions="CenterAndExpand"
+               Margin="0,20,0,10" />
+        <StackLayout Orientation="Horizontal"
+                     Margin="0,20,0,0"
+                    > 
+        <Entry Keyboard="Chat"
+               Placeholder="Nombre evento"
+               FontSize="Large"
+               Margin="40,0,0,0"
+               x:Name="txtNombre"
+               HorizontalOptions="FillAndExpand" />
+            <Image Source="https://i.ibb.co/P1MH3Qh/1828911.png"
+                   HeightRequest="35"
+                  Margin="0,0,40,0" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal"
+                     Margin="0,20,0,0"
+                    >
+            <DatePicker 
+                  x:Name="SeleccionarFecha"
+                   FontSize="Large"
+                   HorizontalOptions="FillAndExpand" 
+                Margin="40,0,0,0"/>
+            <Image Source="https://i.ibb.co/W0DPTZg/1170690.png"
+                   HeightRequest="35"
+                   Margin="0,0,40,0" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal"
+                     Margin="0,20,0,0">
+            <Entry Keyboard="Chat"
+                   Placeholder="Hora de evento"
+                   FontSize="Large"
+                   Margin="40,0,0,0"
+                   x:Name="txtHora"
+                   HorizontalOptions="FillAndExpand" />
+            <Image Source="https://i.ibb.co/CwcC1qD/12598061.png"
+                   HeightRequest="35"
+                   Margin="0,0,40,0" />
+        </StackLayout>
+        <Button Text="Registrar"
+                TextTransform="None"
+                FontAttributes="Bold"
+                TextColor="White"
+                BackgroundColor=" #338bff"
+                FontSize="Large"
+                CornerRadius="10"
+                Margin="80,40,80,0"
+                x:Name="btnRegistrarEvento"
+                Clicked="btnRegistrarEvento_Clicked"
+                
+         />
+        <Image Source="https://i.ibb.co/QP80ZZD/lambda-3.png"
+               HeightRequest="100"
+               Margin="80,150,80,0" />
+    </StackLayout>
+</ContentPage>
