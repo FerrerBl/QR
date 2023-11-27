@@ -13,14 +13,45 @@ namespace QR
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class EditarEvento : ContentPage
 	{
-		Eventos item;
-		public EditarEvento (Eventos item)
+		Eventos even;
+		public EditarEvento (Eventos eventos)
 		{
-			InitializeComponent ();
-			this.item = item;
-			txtNombre.Text = item.NombreEvento.ToString ();
-			SeleccionarFecha.Date = item.FechaHoraEvento.Date;
-			timePicker.Time = item.FechaHoraEvento.TimeOfDay;
+			InitializeComponent();
+            this.even = eventos;
+            BindingContext = this.even;
+        }
+		protected override async void OnAppearing()
+		{
+			base.OnAppearing();
+			if (!string.IsNullOrEmpty(even.IdEventos.ToString()))
+			{
+				var eventos = await App.sqLiteDb.GetEventosByIdAsync(even.IdEventos);
+				if (eventos != null)
+				{
+					txtIDEvento.Text = eventos.IdEventos.ToString();	
+					txtNombre.Text = eventos.NombreEvento;
+					SeleccionarFecha.Date = eventos.FechaHoraEvento.Date;
+					timePicker.Time = eventos.FechaHoraEvento.TimeOfDay;
+				}
+			}
 		}
-	}
+		
+		
+        private async void btnActualizar_Clicked(object sender, EventArgs e)
+        {
+			if (!string.IsNullOrEmpty(txtIDEvento.Text))
+			{
+				Eventos even = new Eventos()
+				{
+					IdEventos = Convert.ToInt32(txtIDEvento.Text),
+					NombreEvento = txtNombre.Text,
+					FechaHoraEvento = SeleccionarFecha.Date.Add(timePicker.Time),
+
+				};
+				await App.sqLiteDb.SaveEventoAsync(even);
+				await DisplayAlert("Actualizacion", "Se actualizo de manera exitosa", "Ok");
+			}
+
+        }
+    }
 }

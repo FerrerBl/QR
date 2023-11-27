@@ -15,5 +15,6 @@ namespace QR.Models
         [NotNull]
 
         public DateTime FechaHoraEvento { get; set; }
+        public bool Estado {  get; set; }   
     }
 }

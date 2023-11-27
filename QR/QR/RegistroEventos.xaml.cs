@@ -33,9 +33,10 @@ namespace QR
                 DateTime fechaYHora = SeleccionarFecha.Date.Add(timePicker.Time);
 
                 Eventos even = new Eventos
-                    {
-                        NombreEvento = txtNombre.Text,
-                        FechaHoraEvento = fechaYHora,
+                {
+                    NombreEvento = txtNombre.Text,
+                    FechaHoraEvento = fechaYHora,
+                    Estado = true,
                     };
                
                     await App.sqLiteDb.SaveEventoAsync(even);

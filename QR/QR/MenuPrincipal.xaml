@@ -136,16 +136,16 @@
                                                  BackgroundColor="Transparent"
                                                      CommandParameter="{Binding .}" 
                                                 />
-                                    <ImageButton Source="https://i.ibb.co/n8HJN1n/12462001.png" 
-                                                 x:Name="btnBorrar"
-                                                 Clicked="Eliminar_Clicked"
-                                                
-                                                 Grid.Row="0"
-                                                 Grid.Column="4"
-                                                 HeightRequest="10"
-                                                 BackgroundColor="Transparent"
-                                                 WidthRequest="50"/>
-                                </Grid>
+                                        <ImageButton Source="https://i.ibb.co/n8HJN1n/12462001.png"
+                                                     x:Name="btnBorrar"
+                                                     Clicked="Eliminar_Clicked"
+                                                     Grid.Row="0"
+                                                     Grid.Column="4"
+                                                     HeightRequest="10"
+                                                     BackgroundColor="Transparent"
+                                                     WidthRequest="50"
+                                                     CommandParameter="{Binding .}" />
+                                    </Grid>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>

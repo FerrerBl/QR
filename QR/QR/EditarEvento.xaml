@@ -19,6 +19,19 @@
         <StackLayout Orientation="Horizontal"
                      Margin="0,20,0,0">
             <Entry Keyboard="Chat"
+                   Placeholder="ID"
+                   FontSize="Large"
+                   Margin="40,0,0,0"
+                   x:Name="txtIDEvento"
+                   HorizontalOptions="FillAndExpand" />
+            <Image Source="https://i.ibb.co/P1MH3Qh/1828911.png"
+                   HeightRequest="35"
+                   Margin="0,0,40,0" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal"
+                     Margin="0,20,0,0">
+            <Entry Keyboard="Chat"
+                   Placeholder="Nombre"
                    FontSize="Large"
                    Margin="40,0,0,0"
                    x:Name="txtNombre"
@@ -47,7 +60,7 @@
                    HeightRequest="35"
                    Margin="0,0,40,0" />
         </StackLayout>
-        <Button Text="Registrar"
+        <Button Text="Actualizar"
                 TextTransform="None"
                 FontAttributes="Bold"
                 TextColor="White"
@@ -55,7 +68,8 @@
                 FontSize="Large"
                 CornerRadius="10"
                 Margin="80,40,80,0"
-                x:Name="btnRegistrarEvento"  />
+                x:Name="btnActualizar"
+                Clicked="btnActualizar_Clicked"/>
         <Image Source="https://i.ibb.co/QP80ZZD/lambda-3.png"
                HeightRequest="100"
                Margin="80,150,80,0" />

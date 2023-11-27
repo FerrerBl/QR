@@ -28,7 +28,7 @@ namespace QR.Data
 
         public  Task <List<Eventos>> GetEventosAsync()
         {
-            return db.Table<Eventos>().ToListAsync();   
+            return db.Table<Eventos>().Where(x=> x.Estado ==true).ToListAsync();   
         }
         
         public Task <Eventos> GetEventosByIdAsync(int idEventos)
