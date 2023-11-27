@@ -20,10 +20,10 @@ namespace QR.Data
 
         public Task<int> SaveEventoAsync(Eventos Even)
         {
-            if (Even.IdEventos == 0)
-                return db.InsertAsync(Even);
+            if (Even.IdEventos != 0)
+                return db.UpdateAsync(Even);
             else
-            return null;
+                return db.InsertAsync(Even);
          }
 
         public  Task <List<Eventos>> GetEventosAsync()

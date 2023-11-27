@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using QR;
 namespace QR.Models
 {
     public class Eventos
@@ -14,8 +14,6 @@ namespace QR.Models
         public string NombreEvento { get; set; }
         [NotNull]
 
-        public DateTime FechaEvento { get; set; }
-        [NotNull]
-        public string HoraEvento { get; set; }
+        public DateTime FechaHoraEvento { get; set; }
     }
 }

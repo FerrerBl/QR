@@ -1,4 +1,5 @@
-﻿using QR.Models;
+﻿using Microsoft.Extensions.Logging;
+using QR.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +14,10 @@ namespace QR
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegistroEventos : ContentPage
     {
+      
         public RegistroEventos()
         {
             InitializeComponent();
-            //miDatePicker.DateSelected += MiDatePicker_DateSelected;
             SeleccionarFecha.DateSelected += SeleccionarFecha_FechaSeleccionada;
 
         }
@@ -29,16 +30,17 @@ namespace QR
         {
             if (ValidarDatos())
             {
-                
-                    Eventos even = new Eventos
+                DateTime fechaYHora = SeleccionarFecha.Date.Add(timePicker.Time);
+
+                Eventos even = new Eventos
                     {
                         NombreEvento = txtNombre.Text,
-                        FechaEvento = SeleccionarFecha.Date,
-                        HoraEvento = txtHora.Text   ,
+                        FechaHoraEvento = fechaYHora,
                     };
+               
                     await App.sqLiteDb.SaveEventoAsync(even);
+
                     txtNombre.Text = "";
-                    txtHora.Text = "";
                     await DisplayAlert("Registro", "Se ha registrado el evento correctamente", "ok");
                 
             }
@@ -52,9 +54,8 @@ namespace QR
             bool validado;
             if (string.IsNullOrEmpty(txtNombre.Text))
                 validado = false;
-            else if (string.IsNullOrEmpty(txtHora.Text))
-                validado = false;
-            
+
+           
 
             else
                 validado = true;

@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Data.SqlClient;
- 
+using QR;
+using QR.Models;
 namespace QR
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -34,9 +35,11 @@ namespace QR
 
 
 
-        private  void Editar_Clicked(object sender, EventArgs e)
+        private async void Editar_Clicked(object sender, EventArgs e)
         {
-          
+            var button = sender as Button;
+            var item = button.CommandParameter as Eventos;
+            await Navigation.PushAsync(new EditarEvento(item));
         }
 
         private void Eliminar_Clicked(object sender, EventArgs e)
@@ -44,10 +47,7 @@ namespace QR
 
         }
 
-        private void listaEventos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-
-        }
+      
 
         private void RegistroEvento_Clicked(object sender, EventArgs e)
         {
@@ -55,5 +55,9 @@ namespace QR
 
         }
 
+        private void btnCapturar_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

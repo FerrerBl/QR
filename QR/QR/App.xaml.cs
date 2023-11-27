@@ -4,6 +4,7 @@ using Xamarin.Forms.Xaml;
 using QR;
 using QR.Data;
 using System.IO;
+using QR.Models;
 namespace QR
 {
      
@@ -15,6 +16,7 @@ namespace QR
             InitializeComponent();
 
             MainPage = new NavigationPage(new MainPage());
+
         }
 
         public static SQLHelper sqLiteDb
@@ -22,7 +24,7 @@ namespace QR
             get
             {
                 if (db == null)
-                    db = new SQLHelper(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Escanner.db3"));
+                    db = new SQLHelper(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "EscannerQR.db3"));
 
                 return db;
             }

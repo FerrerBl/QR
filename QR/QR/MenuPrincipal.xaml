@@ -40,25 +40,72 @@
                         TextColor="White"
                         Background="#338bff" 
                         Margin="0,0"
-                        Clicked="RegistroEvento_Clicked"/>
+                        Clicked="RegistroEvento_Clicked"
+                        CornerRadius="10" />
               
                        
             </StackLayout>
             <StackLayout>
+                <Frame BorderColor="Gray"
+                       CornerRadius="10"
+                        Margin="2,0"
+                       > 
                 <!-- Botón para agregar nuevo evento -->
-               
-                <ListView x:Name="listaEventos"
-                          IsVisible="true"
-                          ItemSelected="listaEventos_ItemSelected">
+                    <ListView x:Name="listaEventos">
+                        <ListView.Header>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Nombre"
+                                       Grid.Row="0"
+                                       Grid.Column="0"
+                                       FontAttributes="Bold"
+                                       TextColor="Black" />
+                                <Label Text="Fecha y Hora"
+                                       Grid.Row="0"
+                                       Grid.Column="1"
+                                       FontAttributes="Bold"
+                                       TextColor="Black"
+                                       Margin="0" />
+                                <Label Text="Capturar"
+                                       Grid.Row="0"
+                                       Grid.Column="2"
+                                       FontAttributes="Bold"
+                                       TextColor="Black"
+                                       Margin="0" />
+                                <Label Text="Editar"
+                                       Grid.Row="0"
+                                       Grid.Column="3"
+                                       FontAttributes="Bold"
+                                       TextColor="Black" />
+                                <Label Text="Eliminar"
+                                       Grid.Row="0"
+                                       Grid.Column="4"
+                                       FontAttributes="Bold"
+                                       TextColor="Black"
+                                       Margin="0" />
+                            </Grid>
+                        </ListView.Header>
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <Grid>
+                                    
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto" />
                                         <RowDefinition Height="Auto" />
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="*" />
@@ -68,23 +115,44 @@
                                            Grid.Row="0"
                                            Grid.Column="0"
                                            TextColor="Black" />
-                                    <Label Text="{Binding FechaEvento}"
+                                    <Label Text="{Binding FechaHoraEvento}"
                                            Grid.Row="0"
                                            Grid.Column="1"
                                            TextColor="Black" />
-                                    <Label Text="{Binding HoraEvento}"
-                                           Grid.Row="0"
-                                           Grid.Column="2"
-                                           TextColor="Black" />
+                                        <ImageButton Source="https://i.ibb.co/HGLmXp8/11450605.png"
+                                                     x:Name="btnCapturar"
+                                                     Clicked="btnCapturar_Clicked"
+                                                     Grid.Row="0"
+                                                     Grid.Column="2"
+                                                     HeightRequest="10"
+                                                     BackgroundColor="Transparent"
+                                                     WidthRequest="50" />
+                                        <ImageButton Source="https://i.ibb.co/P1MH3Qh/1828911.png" 
+                                                 x:Name="btnEditar"
+                                                 Clicked="Editar_Clicked"
+                                                 Grid.Row="0"
+                                                 Grid.Column="3" 
+                                                 HeightRequest="10"
+                                                 BackgroundColor="Transparent"
+                                                     CommandParameter="{Binding .}" 
+                                                />
+                                    <ImageButton Source="https://i.ibb.co/n8HJN1n/12462001.png" 
+                                                 x:Name="btnBorrar"
+                                                 Clicked="Eliminar_Clicked"
+                                                
+                                                 Grid.Row="0"
+                                                 Grid.Column="4"
+                                                 HeightRequest="10"
+                                                 BackgroundColor="Transparent"
+                                                 WidthRequest="50"/>
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <!-- Etiqueta para mostrar cuando no hay eventos -->
-               
+                </Frame>
             </StackLayout>
+            
         </StackLayout>
-      
     </Grid>
 </ContentPage>
