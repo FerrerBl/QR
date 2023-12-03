@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="QR.RegistroUsuario">
-    <StackLayout>
+    <ScrollView>
+        <StackLayout>
         <Image Source="https://i.ibb.co/McLyLMc/1144760.png"
                HeightRequest="35"
                HorizontalOptions="End"
@@ -11,7 +12,7 @@
                HorizontalOptions="End"
                Margin="0,-10,15,0"
                FontAttributes="Bold" />
-        <Label Text="Registro de Eventos"
+        <Label Text="Registro de Usuarios"
                FontAttributes="Bold"
                FontSize="35"
                HorizontalOptions="CenterAndExpand"
@@ -19,10 +20,10 @@
         <StackLayout Orientation="Horizontal"
                      Margin="0,20,0,0">
             <Entry Keyboard="Chat"
-                   Placeholder="Nombre Usuario"
+                   Placeholder="Nombre"
                    FontSize="Large"
                    Margin="40,0,0,0"
-                   x:Name="txtUsuario"
+                   x:Name="txtNombre"
                    HorizontalOptions="FillAndExpand" />
             <Image Source="https://i.ibb.co/P1MH3Qh/1828911.png"
                    HeightRequest="35"
@@ -40,7 +41,57 @@
                    HeightRequest="35"
                    Margin="0,0,40,0" />
         </StackLayout>
-        <StackLayout Orientation="Horizontal"
+            <StackLayout Orientation="Horizontal"
+                         Margin="0,20,0,0">
+                <Entry Keyboard="Chat"
+                       Placeholder="Apellido M."
+                       FontSize="Large"
+                       Margin="40,0,0,0"
+                       x:Name="txtApellidoM"
+                       HorizontalOptions="FillAndExpand" />
+                <Image Source="https://i.ibb.co/W0DPTZg/1170690.png"
+                       HeightRequest="35"
+                       Margin="0,0,40,0" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal"
+                         Margin="0,20,0,0">
+                <Entry Keyboard="Chat"
+                       Placeholder="Nombre Cuenta."
+                       FontSize="Large"
+                       Margin="40,0,0,0"
+                       x:Name="txtNombreCuenta"
+                       HorizontalOptions="FillAndExpand" />
+                <Image Source="https://i.ibb.co/W0DPTZg/1170690.png"
+                       HeightRequest="35"
+                       Margin="0,0,40,0" />
+            </StackLayout>
+           
+            <StackLayout Orientation="Horizontal"
+                         Margin="0,20,0,0">
+                <Entry Keyboard="Chat"
+                       Placeholder="Contraseña"
+                       FontSize="Large"
+                       Margin="40,0,0,0"
+                       x:Name="txtContraseña"
+                       HorizontalOptions="FillAndExpand" />
+                <Image Source="https://i.ibb.co/W0DPTZg/1170690.png"
+                       HeightRequest="35"
+                       Margin="0,0,40,0" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal"
+                         Margin="0,20,0,0">
+                <Entry Keyboard="Chat"
+                       Text="Moderador"
+                       IsReadOnly="True"
+                       FontSize="Large"
+                       Margin="40,0,0,0"
+                       x:Name="txtRol"
+                       HorizontalOptions="FillAndExpand" />
+                <Image Source="https://i.ibb.co/W0DPTZg/1170690.png"
+                       HeightRequest="35"
+                       Margin="0,0,40,0" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal"
                      Margin="0,20,0,0">
             <TimePicker x:Name="timePicker"
                         Format="T"
@@ -64,4 +115,5 @@
                HeightRequest="100"
                Margin="80,150,80,0" />
     </StackLayout>
+    </ScrollView>
 </ContentPage>
