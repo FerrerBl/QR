@@ -5,7 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-
+using QR;
+using QR.Vistas_CRUD_Eventos;
 namespace QR
 {
     public partial class MainPage : ContentPage

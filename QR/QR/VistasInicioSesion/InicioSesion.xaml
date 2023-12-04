@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="QR.MainPage"
              NavigationPage.HasNavigationBar="False"
-             >
+             BackgroundColor="White">
     
     
     <Grid>
@@ -15,7 +15,7 @@
                    TextTransform="None"
                    FontSize="16"
                    FontAttributes="Bold"
-                   TextColor="#338bff" />
+                   TextColor="#00003C" />
             <StackLayout Orientation="Horizontal">
               
                 <Entry Keyboard="Chat"
@@ -31,7 +31,8 @@
             <Entry Keyboard="Chat"
                    Placeholder="Contraseña"
                    FontSize="Large"
-                   HorizontalOptions="FillAndExpand" />
+                   HorizontalOptions="FillAndExpand" 
+                   />
                 <Image Source="https://i.ibb.co/x6WKLm6/padlock.png" 
                        HeightRequest="25"/>
             </StackLayout>
@@ -39,7 +40,7 @@
                     TextTransform="None"
                     FontAttributes="Bold"
                     TextColor="White"
-                    BackgroundColor=" #338bff"
+                    BackgroundColor=" #00003C"
                     FontSize="Large"
                     CornerRadius="10"
                     Margin="40,20" 
@@ -49,7 +50,7 @@
             <Label Text="Olvidaste la contraseña?"
                    HorizontalOptions="CenterAndExpand"
                    FontSize="20"
-                   TextColor="#338bff"
+                   TextColor="#00003C"
                    FontAttributes="Bold"
                    TextDecorations="Underline"
                    x:Name="lblRecuperacion">
@@ -62,7 +63,7 @@
                    HorizontalOptions="Center"
                    Margin="0,80" />
             <Label Text="No tienes cuenta?"
-                   TextColor="#338bff"
+                   TextColor="#00003C"
                    FontAttributes="Bold"
                    HorizontalOptions="Center"
                    FontSize="20" />
@@ -72,7 +73,7 @@
                     FontAttributes="Bold"
                     CornerRadius="20"
                     Margin="60,10"
-                    Background="#338bff"
+                    Background="#00003C"
                     TextTransform="None" 
                     x:Name="btnRegistro"
                     Clicked="btnRegistro_Clicked"/>

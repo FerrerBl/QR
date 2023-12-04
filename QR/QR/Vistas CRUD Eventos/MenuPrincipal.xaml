@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="QR.MenuPrincipal"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White">
     <Grid>
         <StackLayout>
             <StackLayout Orientation="Horizontal">
@@ -11,18 +12,12 @@
                        HeightRequest="40"
                        Margin="15,20"/>
                 
-                <SearchBar Placeholder="Buscar Evento"
-                       FontSize="Large"
-                       Margin="10,0"
-                       Keyboard="Chat"
-                       HorizontalOptions="FillAndExpand"/>
-                <Image Source="https://i.ibb.co/18m1g58/3031293.png" 
-                       HeightRequest="15"/>
+              
                 <Image Source="https://i.ibb.co/McLyLMc/1144760.png"
                        HeightRequest="35"
-                       Margin="25,20"/>
+                       Margin="25,20" />
             </StackLayout>
-            <Label Text="User"
+            <Label Text="Usuario"
                    HorizontalOptions="End" 
                    Margin="0,-20,26,0"
                    FontAttributes="Bold"/>
@@ -46,10 +41,8 @@
                        
             </StackLayout>
             <StackLayout>
-                <Frame BorderColor="Gray"
-                       CornerRadius="10"
-                        Margin="2,0"
-                       > 
+                
+                       
                 <!-- Botón para agregar nuevo evento -->
                     <ListView x:Name="listaEventos">
                         <ListView.Header>
@@ -126,7 +119,8 @@
                                                      Grid.Column="2"
                                                      HeightRequest="10"
                                                      BackgroundColor="Transparent"
-                                                     WidthRequest="50" />
+                                                     WidthRequest="50"
+                                                     CommandParameter="{Binding .}"/>
                                         <ImageButton Source="https://i.ibb.co/P1MH3Qh/1828911.png" 
                                                  x:Name="btnEditar"
                                                  Clicked="Editar_Clicked"
@@ -150,7 +144,6 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                </Frame>
             </StackLayout>
             
         </StackLayout>

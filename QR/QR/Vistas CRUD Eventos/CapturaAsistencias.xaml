@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             x:Class="QR.Vistas_CRUD_Eventos.CapturaAsistencias"
+             BackgroundColor="White"
+             NavigationPage.HasBackButton="True"
+             NavigationPage.HasNavigationBar="False"
+             
+             >
+    <Grid>
+        <StackLayout>
+            <ImageButton Source="https://i.ibb.co/Pt3N9w3/7348991.png"
+                         HeightRequest="35"
+                         Margin="20,30,350,0"
+                         x:Name="BackBtn"
+            BackgroundColor="Transparent"
+                         Clicked="BackBtn_Clicked"/>
+        </StackLayout>
+                <Image Source="https://i.ibb.co/McLyLMc/1144760.png"
+               HeightRequest="35"
+               HorizontalOptions="End"
+                   Margin="350,-730,30,0"/>
+    <Label Text="Usuario"
+           HorizontalOptions="End"
+               Margin="-30,60,20,0"
+               FontAttributes="Bold" 
+                   x:Name="blueLabel"/>
+    <Label Text="Captura de Asistencias"
+           FontAttributes="Bold"
+           FontSize="35"
+           HorizontalOptions="CenterAndExpand"
+           Margin="0,100,0,30" />
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Evento: "
+                   TextColor="LightGray"
+                   HorizontalOptions="Center"
+                   FontSize="30"
+                   Margin="100,160,0,0"/>
+            <Label x:Name="lblNombre" 
+                   TextColor="LightGray"
+                   HorizontalOptions="Center"
+                   FontSize="30"
+                   Margin="0,160"
+                   />
+        </StackLayout>
+       
+        <Button Text="+"
+                FontSize="30"
+                WidthRequest="200"
+                HeightRequest="200"
+                x:Name="Registrar" 
+                Clicked="Registrar_Clicked"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                BackgroundColor="#338bff"/>
+        <Image Source="https://i.ibb.co/QP80ZZD/lambda-3.png" 
+               Margin="150,600,150,0"/>
+    </Grid>
+</ContentPage>

@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using QR;
 using QR.Models;
 using Microsoft.Extensions.Logging;
+using QR.Vistas_CRUD_Eventos;
 namespace QR
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -70,9 +71,14 @@ namespace QR
 
         }
 
-        private void btnCapturar_Clicked(object sender, EventArgs e)
+        private async void btnCapturar_Clicked(object sender, EventArgs e)
         {
+            var button = sender as ImageButton;
 
+            var evento = button.CommandParameter as Eventos;
+            // Navegar a la página de edición y pasar el evento como parámetro
+            if (evento != null)
+                await Navigation.PushAsync(new CapturaAsistencias(evento));
         }
     }
 }

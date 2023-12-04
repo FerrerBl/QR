@@ -16,6 +16,8 @@ namespace QR.Data
             db = new SQLiteAsyncConnection(dbPath);
             db.CreateTableAsync<Eventos>().Wait();
             db.CreateTableAsync<Usuario>().Wait();
+            db.CreateTableAsync<RegistroAsistencia>().Wait();
+
 
         }
 
@@ -55,6 +57,18 @@ namespace QR.Data
         public Task<Usuario> GetUsuarioByIdAsync(int idUsuario)
         {
             return db.Table<Usuario>().Where(a => a.IdUsuario == idUsuario).FirstOrDefaultAsync();
+        }
+
+        //Almacenar datos de asistencia
+        public Task<int> SaveAssistanceAsync(RegistroAsistencia asis)
+        {
+         
+                return db.InsertAsync(asis);
+        }
+
+        public Task<List<RegistroAsistencia>> GetAssistanceAsync()
+        {
+            return db.Table<RegistroAsistencia>().ToListAsync();
         }
     }
 
