@@ -13,9 +13,12 @@
                        Margin="15,20"/>
                 
               
-                <Image Source="https://i.ibb.co/McLyLMc/1144760.png"
+                <ImageButton Source="https://i.ibb.co/McLyLMc/1144760.png"
                        HeightRequest="35"
-                       Margin="25,20" />
+                       Margin="25,20"
+                             x:Name="btnAsistencias"
+                             BackgroundColor="Transparent"
+                             Clicked="btnAsistencias_Clicked"/>
             </StackLayout>
             <Label Text="Usuario"
                    HorizontalOptions="End" 

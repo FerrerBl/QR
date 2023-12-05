@@ -2,10 +2,9 @@
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        x:Class="QR.MenuOpciones"
-       xmlns:local="clr-namespace:QR"
-        
-       >
-    <local:MenuPrincipal />
-    <local:ListaUsuarios />
-    <local:AsistenciasUsuarios />
-</Shell>
+       xmlns:local="clr-namespace:QR">
+    <FlyoutItem Title="Video">
+        <ShellContent Title="Primer"
+                      ContentTemplate="{DataTemplate local:MenuPrincipal}" />
+    </FlyoutItem>
+    </Shell>

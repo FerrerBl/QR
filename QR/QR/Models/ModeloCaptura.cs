@@ -11,7 +11,7 @@ namespace QR.Models
 {
     public class ModeloCaptura
     {
-        public async Task GetTheData(string url)
+        public async Task GetTheData(string url, int eventId)
         {
             try
             {
@@ -70,15 +70,17 @@ namespace QR.Models
 
                 // Extrae los datos de la tercera fila
                 extraerDatosFila(terceraFila);
-                await App.Current.MainPage.DisplayAlert("Datos Obtenidos", $"Número de Control: {numeroControl}\nNombre: {nombre}", "ok");
-                //var registroAsistencia = new RegistroAsistencia
-                //{
-                //    IdEvento = eventId,
-                //    FechaEntrada = fechaHora,
-                //    NombreAlumno = nombre,
-                //    NumeroControlAlumno = numeroControl
+                var registroAsistencia = new RegistroAsistencia
+                {
+                    IdEvento = eventId,
+                    HoraEntrada = DateTime.Now.TimeOfDay,
+                    NombreAlumno = nombre,
+                    NumeroControlAlumno = numeroControl
 
-                //};
+                };
+                await App.sqLiteDb.SaveAssistanceAsync(registroAsistencia);
+                await App.Current.MainPage.DisplayAlert("Registro exitoso", $"Número de Control: {numeroControl}\nNombre: {nombre}", "ok");
+
             }
             catch (Exception ex)
             {

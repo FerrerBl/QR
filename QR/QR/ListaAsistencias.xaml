@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QR.ListaAsistencias"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White">
+    <Grid>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Image Source="https://i.ibb.co/S58bwWy/56763.png"
+                       HeightRequest="40"
+                       Margin="15,20,15,0" />
+                <Image Source="https://i.ibb.co/McLyLMc/1144760.png"
+                       HeightRequest="35"
+                       Margin="250,20,0,0" />
+            </StackLayout>
+            <Label Text="Usuario"
+                   HorizontalOptions="End"
+                   Margin="0,-20,26,0"
+                   FontAttributes="Bold" />
+            <Label Text="Listas de Asistencias"
+                   FontAttributes="Bold"
+                   FontSize="35"
+                   TextColor="Black"
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="0,30" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Evento: "
+                       TextColor="LightGray"
+                       HorizontalOptions="Center"
+                       FontSize="30"
+                       Margin="100,0,0,0" />
+                <Label x:Name="lblNombre"
+                       TextColor="LightGray"
+                       HorizontalOptions="Center"
+                       FontSize="30"
+                       Margin="0" />
+            </StackLayout>
+            <StackLayout>
+                <!-- Botón para agregar nuevo evento -->
+                <ListView x:Name="listaEventos">
+                    <ListView.Header>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Alumno"
+                                   Grid.Row="0"
+                                   Grid.Column="0"
+                                   FontAttributes="Bold"
+                                   TextColor="Black" />
+                            <Label Text="No.Control"
+                                   Grid.Row="0"
+                                   Grid.Column="1"
+                                   FontAttributes="Bold"
+                                   TextColor="Black"
+                                   Margin="0" />
+                        <Label Text="HoraEntrada"
+                               Grid.Row="0"
+                               Grid.Column="2"
+                               FontAttributes="Bold"
+                               TextColor="Black"
+                               Margin="0" />
+                    </Grid>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding NombreAlumno}"
+                                           Grid.Row="0"
+                                           Grid.Column="0"
+                                           TextColor="Black" />
+                                    <Label Text="{Binding NumeroControlAlumno}"
+                                           Grid.Row="0"
+                                           Grid.Column="1"
+                                           TextColor="Black" />
+                                    <Label Text="{Binding HoraEntrada}"
+                                           Grid.Row="0"
+                                           Grid.Column="2"
+                                           TextColor="Black" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+</ContentPage>

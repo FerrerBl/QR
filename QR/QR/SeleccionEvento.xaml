@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QR.SeleccionEvento"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White">
+    <Grid>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Image Source="https://i.ibb.co/S58bwWy/56763.png"
+                       HeightRequest="40"
+                       Margin="15,20,15,0" />
+                <Image Source="https://i.ibb.co/McLyLMc/1144760.png"
+                       HeightRequest="35"
+                       Margin="250,20,0,20" />
+            </StackLayout>
+            <Label Text="Usuario"
+                   HorizontalOptions="End"
+                   Margin="0,-20,26,0"
+                   FontAttributes="Bold" />
+            <Label Text="Asistencia de Eventos"
+                   FontAttributes="Bold"
+                   FontSize="35"
+                   HorizontalOptions="CenterAndExpand"
+                   Margin="0,30,0,30" 
+                   TextColor="Black"/>
+           
+                <StackLayout>
+                    <!-- Botón para agregar nuevo evento -->
+                    <ListView x:Name="listaEventos"
+                              ItemTapped="listaEventos_ItemTapped">
+                        <ListView.Header>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Text="Nombre"
+                                       Grid.Row="0"
+                                       Grid.Column="0"
+                                       FontAttributes="Bold"
+                                       TextColor="Black" />
+                                <Label Text="Fecha y Hora"
+                                       Grid.Row="0"
+                                       Grid.Column="1"
+                                       FontAttributes="Bold"
+                                       TextColor="Black"
+                                       Margin="0" />
+                            </Grid>
+                        </ListView.Header>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label Text="{Binding NombreEvento}"
+                                               Grid.Row="0"
+                                               Grid.Column="0"
+                                               TextColor="Black" />
+                                        <Label Text="{Binding FechaHoraEvento}"
+                                               Grid.Row="0"
+                                               Grid.Column="1"
+                                               TextColor="Black" />
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+        </StackLayout>
+    </Grid>
+</ContentPage>

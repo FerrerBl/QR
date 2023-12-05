@@ -66,10 +66,11 @@ namespace QR.Data
                 return db.InsertAsync(asis);
         }
 
-        public Task<List<RegistroAsistencia>> GetAssistanceAsync()
+        public Task<List<RegistroAsistencia>> GetAssistanceByIdAsync(int idEvento)
         {
-            return db.Table<RegistroAsistencia>().ToListAsync();
+            return db.Table<RegistroAsistencia>().Where(a=>a.IdEvento == idEvento).ToListAsync();
         }
+       
     }
 
 }

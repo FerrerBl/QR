@@ -11,17 +11,14 @@ namespace QR.Models
     {
         [PrimaryKey, AutoIncrement]
         public int IdAsistencia { get; set; }
+        [ForeignKey(nameof(Eventos))]
         public int IdEvento { get; set; }
-        public DateTime FechaEntrada { get; set; }
-        public DateTime FechaSalida { get; set; }
+        public TimeSpan HoraEntrada { get; set; }
+        public TimeSpan HoraSalida { get; set; }
         public string NombreAlumno { get; set; }
         public string NumeroControlAlumno { get; set; }
-        public int IdUsuarioCaptura { get; set; }
 
-        [ForeignKey(nameof(Eventos))] // Corregido aquí
-        public int IdEventos { get; set; }
 
-        [ForeignKey(nameof(Usuario))] // Corregido aquí
-        public int IdUsuario { get; set; }
+       
     }
 }

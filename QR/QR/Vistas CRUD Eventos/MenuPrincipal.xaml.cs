@@ -80,5 +80,11 @@ namespace QR
             if (evento != null)
                 await Navigation.PushAsync(new CapturaAsistencias(evento));
         }
+
+        private async void btnAsistencias_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SeleccionEvento());
+
+        }
     }
 }
